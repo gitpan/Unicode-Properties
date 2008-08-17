@@ -17,6 +17,7 @@ no_index:
     - t
 requires:
   Unicode::UCD: 0
+  perl: 5.8
 resources:
   license: http://dev.perl.org/licenses/
-version: 0.02
+version: 0.03

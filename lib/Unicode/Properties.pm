@@ -4,6 +4,7 @@ use warnings;
 use strict;
 use Unicode::UCD;
 
+require 5.008008;
 require Exporter;
 our @ISA = qw(Exporter);
 our @EXPORT_OK= qw/uniprops/;
@@ -16,11 +17,11 @@ Unicode::Properties - find out what properties a character has
 
 =head1 VERSION
 
-Version 0.02
+Version 0.03
 
 =cut
 
-our $VERSION = '0.02';
+our $VERSION = '0.03';
 
 =head1 SYNOPSIS
 
@@ -354,7 +355,9 @@ if you are using Perl 5.8.8 unpatched, your Unicode version is 4.1.0
 so you won't get "Balinese" in the results list.
 
 Also, I don't know the behaviour of Unicode versions other than 4.1.0
-and 5.0.0, so this module only covers those two.
+and 5.0.0, so this module only covers those two. I couldn't get Perl
+5.8.5 to install on my computer, so I've set the minimum version to
+5.8.8 for this module.
 
 =back
 
