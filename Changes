@@ -1,5 +1,23 @@
 Revision history for Unicode-Properties
 
-0.01    Date/time
-        First version, released on an unsuspecting world.
+0.02    Sunday 17th August 2008
+
+The first version failed a lot of tests on the CPAN tester's
+matrix. The cause was that Balinese and some other script names were
+only added in Unicode version 5.0.0. To work around this problem, I
+changed the list of properties to be a hash with the property names as
+keys and the Unicode version which the property appeared in as a
+value.
+
+I added the version numbers based on trial and error testing with the
+Perl 5.8.8 supplied with Ubuntu linux and a self-compiled version of
+Perl 5.10. The problem is that this might fail on versions of Perl and
+Unicode I don't have available, so I'll be watching the tester's
+matrix to see what happens.
+
+Hopefully at some point this can move to a saner system.
+
+0.01    Saturday 15th August 2008
+
+First version
 
