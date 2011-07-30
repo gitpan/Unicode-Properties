@@ -9,45 +9,7 @@ require Exporter;
 our @ISA = qw(Exporter);
 our @EXPORT_OK= qw/uniprops/;
 
-=encoding utf8
-
-=head1 NAME
-
-Unicode::Properties - find out what properties a character has
-
-=head1 VERSION
-
-Version 0.03
-
-=cut
-
-our $VERSION = '0.03';
-
-=head1 SYNOPSIS
-
-    use Unicode::Properties 'uniprops';
-    my @prop_list = uniprops ('☺'); # Unicode smiley face
-    print "@prop_list\n";
-
-prints
-
-    InMiscellaneousSymbols Any Assigned Common
-
-You can then use, for example, \p{InMiscellaneousSymbols} to match
-this character in a regular expression.
-
-=head1 EXPORT
-
-Exports a function "uniprops" on request.
-
-=head1 FUNCTIONS
-
-=head2 uniprops
-
-Given a character, returns a list of properties which the character
-has.
-
-=cut
+our $VERSION = '0.04';
 
 my %propnames = qw/
 Armenian 4.1.0
@@ -319,23 +281,58 @@ sub uniprops
     return wantarray ? @matched : \@matched;
 }
 
-=head1 AUTHOR
+sub matchchars
+{
+    my ($re) = @_;
+    if ($propnames{$re}) {
+	$re = "\\p{$re}";
+    }
+    my @matches = grep { chr ($_) =~ /$re/ } 
+	(0x00 .. 0xD7FF, 0xE000 .. 0xFDCF, 0xFDF0.. 0xFFFD);
+    return wantarray ? @matches : \@matches;
+}
 
-Ben Kasmin Bullock, C<< <benkasminbullock at gmail.com> >>
+1;
 
-=head1 BUG REPORTS
+__END__
 
-Please report any bugs or feature requests to C<bug-unicode-properties
-at rt.cpan.org>, or through the web interface at
-L<http://rt.cpan.org/NoAuth/ReportBug.html?Queue=Unicode-Properties>.
-I will be notified, and then you'll automatically be notified of
-progress on your bug as I make changes.
+=encoding utf8
 
-=head1 SUPPORT
+=head1 NAME
 
-You can find documentation for this module with the perldoc command.
+Unicode::Properties - find out what properties a character has
 
-    perldoc Unicode::Properties
+=cut
+
+=head1 SYNOPSIS
+
+    use Unicode::Properties 'uniprops';
+    my @prop_list = uniprops ('☺'); # Unicode smiley face
+    print "@prop_list\n";
+
+prints
+
+    InMiscellaneousSymbols Any Assigned Common
+
+You can then use, for example, C<\p{InMiscellaneousSymbols}> to match
+this character in a regular expression.
+
+=head1 FUNCTIONS
+
+=head2 uniprops
+
+Given a character, returns a list of properties which the character
+has.
+
+=head2 matchchars
+
+   my @matching = matchchars ($property);
+
+Returns a list of all the characters which match a particular
+property. If C<$property> is not found in the list of possible Unicode
+properties, it treats it as a regular expression.
+
+=cut
 
 =head1 BUGS
 
@@ -361,14 +358,29 @@ and 5.0.0, so this module only covers those two. I couldn't get Perl
 
 =back
 
+=head1 SEE ALSO
+
+=over
+
+=item The "uniprops" script in L<Unicode::Tussle>
+
+This script was written because the author (Tom Christiansen) was
+dissatisfied with Unicode::Properties. Unfortunately, it uses the same
+method as this module, of parsing the Perl documentation to get the
+information. It only works for Perl versions 5.12 or 5.14.
+
+=back
+
 =head1 COPYRIGHT & LICENSE
 
-Copyright 2008 Ben Kasmin Bullock, all rights reserved.
+Copyright © 2011 Ben Bullock, all rights reserved.
 
 This program is free software; you can redistribute it and/or modify it
 under the same terms as Perl itself.
 
+=head1 AUTHOR
+
+Ben Bullock, <bkb@cpan.org>
 
 =cut
 
-1; # End of Unicode::Properties

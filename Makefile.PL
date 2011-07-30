@@ -1,13 +1,15 @@
-use inc::Module::Install;
+use strict;
+use warnings;
+use ExtUtils::MakeMaker;
 
-name     'Unicode-Properties';
-all_from 'lib/Unicode/Properties.pm';
-author   'Ben Kasmin Bullock <benkasminbullock@gmail.com>';
+my $pm = 'lib/Unicode/Properties.pm';
 
-requires 'Unicode::UCD';
-build_requires 'Test::More';
-
-auto_install;
-
-WriteAll;
-
+WriteMakefile (
+    VERSION_FROM => $pm,
+    ABSTRACT_FROM => $pm,
+    AUTHOR => 'Ben Bullock <bkb@cpan.org>',
+    PREREQ_PM => {
+        'Unicode::UCD',
+        'Test::More',
+    },
+);

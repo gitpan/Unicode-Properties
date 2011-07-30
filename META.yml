@@ -1,23 +1,22 @@
 ---
 abstract: 'find out what properties a character has'
 author:
-  - 'Ben Kasmin Bullock <benkasminbullock@gmail.com>'
+  - 'Ben Bullock <bkb@cpan.org>'
 build_requires:
-  Test::More: 0
-distribution_type: module
-generated_by: 'Module::Install version 0.76'
-license: perl
+  ExtUtils::MakeMaker: 0
+configure_requires:
+  ExtUtils::MakeMaker: 0
+dynamic_config: 1
+generated_by: 'ExtUtils::MakeMaker version 6.58, CPAN::Meta::Converter version 2.110930'
+license: unknown
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
   version: 1.4
 name: Unicode-Properties
 no_index:
   directory:
-    - inc
     - t
+    - inc
 requires:
   Unicode::UCD: 0
-  perl: 5.8
-resources:
-  license: http://dev.perl.org/licenses/
-version: 0.03
+version: 0.04

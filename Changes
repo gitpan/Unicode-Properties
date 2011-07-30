@@ -1,5 +1,14 @@
 Revision history for Unicode-Properties
 
+0.04 2011-07-30
+
+* Added a new function, matchchars, which matches any characters in
+  the specified block.
+
+* Changed to ExtUtils::MakeMaker & removed Module::Install things.
+
+0.03
+
 0.02    Sunday 17th August 2008
 
 The first version failed a lot of tests on the CPAN tester's
