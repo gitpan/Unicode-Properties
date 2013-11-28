@@ -1,32 +1,23 @@
-Revision history for Unicode-Properties
+Revision history for perl module Unicode::Properties
+
+0.05 2013-11-28
+
+* Change format of "Changes"
 
 0.04 2011-07-30
 
 * Added a new function, matchchars, which matches any characters in
   the specified block.
-
 * Changed to ExtUtils::MakeMaker & removed Module::Install things.
 
-0.03
+0.03 2008-08-17
 
-0.02    Sunday 17th August 2008
+0.02 2008-08-16
 
-The first version failed a lot of tests on the CPAN tester's
-matrix. The cause was that Balinese and some other script names were
-only added in Unicode version 5.0.0. To work around this problem, I
-changed the list of properties to be a hash with the property names as
-keys and the Unicode version which the property appeared in as a
-value.
+* Internal changes to pass cpantesters tests.
 
-I added the version numbers based on trial and error testing with the
-Perl 5.8.8 supplied with Ubuntu linux and a self-compiled version of
-Perl 5.10. The problem is that this might fail on versions of Perl and
-Unicode I don't have available, so I'll be watching the tester's
-matrix to see what happens.
+0.01 2008-08-16
 
-Hopefully at some point this can move to a saner system.
+* First version
 
-0.01    Saturday 15th August 2008
-
-First version
 

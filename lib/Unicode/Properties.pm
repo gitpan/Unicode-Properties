@@ -9,7 +9,7 @@ require Exporter;
 our @ISA = qw(Exporter);
 our @EXPORT_OK= qw/uniprops/;
 
-our $VERSION = '0.04';
+our $VERSION = '0.05';
 
 my %propnames = qw/
 Armenian 4.1.0
