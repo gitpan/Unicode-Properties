@@ -4,9 +4,9 @@
       "Ben Bullock <bkb@cpan.org>"
    ],
    "dynamic_config" : 1,
-   "generated_by" : "ExtUtils::MakeMaker version 6.8, CPAN::Meta::Converter version 2.120921",
+   "generated_by" : "ExtUtils::MakeMaker version 6.88, CPAN::Meta::Converter version 2.133380",
    "license" : [
-      "unknown"
+      "perl_5"
    ],
    "meta-spec" : {
       "url" : "http://search.cpan.org/perldoc?CPAN::Meta::Spec",
@@ -33,10 +33,19 @@
       "runtime" : {
          "requires" : {
             "Test::More" : "0",
-            "Unicode::UCD" : "0"
+            "Unicode::UCD" : "0",
+            "perl" : "5.008009"
          }
       }
    },
    "release_status" : "stable",
-   "version" : "0.05"
+   "resources" : {
+      "bugtracker" : {
+         "web" : "https://github.com/benkasminbullock/Unicode-Properties/issues"
+      },
+      "repository" : {
+         "url" : "https://github.com/benkasminbullock/Unicode-Properties"
+      }
+   },
+   "version" : "0.06"
 }

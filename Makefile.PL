@@ -3,7 +3,7 @@ use warnings;
 use ExtUtils::MakeMaker;
 
 my $pm = 'lib/Unicode/Properties.pm';
-
+my $repo = 'https://github.com/benkasminbullock/Unicode-Properties';
 WriteMakefile (
     NAME => 'Unicode::Properties',
     VERSION_FROM => $pm,
@@ -12,5 +12,13 @@ WriteMakefile (
     PREREQ_PM => {
         'Unicode::UCD' => 0,
         'Test::More' => 0,
+    },
+    MIN_PERL_VERSION => '5.008009',
+    LICENSE => 'perl',
+    META_MERGE => {
+        resources => {
+            repository => $repo,
+            bugtracker => "$repo/issues",
+        },
     },
 );

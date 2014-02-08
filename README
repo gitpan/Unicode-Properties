@@ -12,7 +12,7 @@
                   |_|                              
 
 
-This is the README for Unicode::Properties version 0.05.
+This is the README for Unicode::Properties version 0.06.
 
 Unicode::Properties is a "module" for the Perl computer programming language, a
 library of computer code to install on a computer.  This document contains four
@@ -54,6 +54,8 @@ using
 
 3. INSTALLATION
 
+This module requires Perl version 5.8.9 or later.
+
 To install the module from CPAN, use
 
     cpan Unicode::Properties
@@ -62,11 +64,11 @@ If you have the App::cpanminus installer, you may prefer
 
     cpanm Unicode::Properties
 
-To install the module from the source file, Unicode-Properties-0.05.tar.gz,
+To install the module from the source file, Unicode-Properties-0.06.tar.gz,
 follow this sequence of commands:
 
-    tar xfz Unicode-Properties-0.05.tar.gz
-    cd Unicode-Properties-0.05
+    tar xfz Unicode-Properties-0.06.tar.gz
+    cd Unicode-Properties-0.06
     perl Makefile.PL
     make
     make install
@@ -82,15 +84,15 @@ To get help with the module, you can email the author, Ben Bullock, at
 <bkb@cpan.org>. If you think there is a problem in the module, you can report a
 bug at 
 
-<>,
+<https://github.com/benkasminbullock/Unicode-Properties/issues>,
 
 or if you want to alter the source code of Unicode::Properties, try the public
 repository on github at 
 
-<>. 
+<https://github.com/benkasminbullock/Unicode-Properties>. 
 
 -----------------------------------------------------------------------------
 
-This README was written on Thu Nov 28 13:47:51 2013.
+This README was written on Sat Feb  8 10:39:40 2014.
 
 -----------------------------------------------------------------------------
